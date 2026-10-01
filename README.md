@@ -76,4 +76,4 @@ Ordinary runs accept explicit overrides, applied after task defaults:
 
 ## Attribution
 
-The implementation for MAC, MAC-FQL, networks, environment utilities, and dataset utilities are adapted from the MAC implementation accompanying **Scalable Offline Model-Based RL with Action Chunks**, by Kwanyoung Park, Seohong Park, Youngwoon Lee, and Sergey Levine ([arXiv:2512.08108](https://arxiv.org/abs/2512.08108)). The code is distributed under the [MIT license](LICENSE), retaining MAC's copyright notice. The editor follows QAM-E; applicable [QAM](licenses/qam-LICENSE) and [FQL](licenses/fql-LICENSE) notices are included.
+The implementation for MAC, MAC-FQL, networks, environment utilities, and dataset utilities are adapted from the MAC implementation accompanying **Scalable Offline Model-Based RL with Action Chunks**, by Kwanyoung Park, Seohong Park, Youngwoon Lee, and Sergey Levine ([arXiv:2512.08108](https://arxiv.org/abs/2512.08108)). The code is distributed under the [MIT license](LICENSE), retaining MAC's copyright notice. The editor follows QAM-E.
