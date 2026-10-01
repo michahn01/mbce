@@ -1,6 +1,6 @@
 # MBCE
 
-Model-Based Chunk Editing for offline reinforcement learning. MBCE learns bounded corrections to behavior-cloned action chunks using two TD critics, then selects among the edited chunks using a model-based critic.
+Model-Based Chunk Editing for offline reinforcement learning. MBCE learns bounded corrections to behavior-cloned action chunks using TD-learning, then selects among the edited chunks using a model-based critic.
 
 | Algorithm | Policy extraction |
 | --- | --- |
