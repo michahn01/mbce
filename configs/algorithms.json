@@ -1,0 +1,12 @@
+{
+  "mac": {"num_samples_train": 8, "num_samples_test": 32},
+  "mbce": {
+    "num_samples_train": 8,
+    "num_samples_test": 32,
+    "edit_scale": 0.03,
+    "edit_initial_temperature": 1.0,
+    "edit_target_entropy_multiplier": 0.5
+  },
+  "mbce-random": {"num_samples_train": 8, "num_samples_test": 32, "edit_scale": 0.03},
+  "mac-fql": {"alpha": 3.0}
+}

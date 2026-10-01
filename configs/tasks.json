@@ -1,0 +1,22 @@
+{
+  "puzzle-3x3": {
+    "environment": "puzzle-3x3-play-singletask-task4-v0",
+    "dataset": "puzzle-3x3-play-v0",
+    "agents": {"mbce": {"edit_scale": 0.065}}
+  },
+  "puzzle-4x4": {
+    "environment": "puzzle-4x4-play-singletask-task4-v0",
+    "dataset": "puzzle-4x4-play-v0",
+    "agents": {}
+  },
+  "cube-double": {
+    "environment": "cube-double-play-singletask-task2-v0",
+    "dataset": "cube-double-play-v0",
+    "agents": {}
+  },
+  "antsoccer": {
+    "environment": "antsoccer-medium-navigate-singletask-task4-v0",
+    "dataset": "antsoccer-medium-navigate-v0",
+    "agents": {}
+  }
+}

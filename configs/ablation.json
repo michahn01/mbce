@@ -1,0 +1,5 @@
+{
+  "task": "puzzle-3x3",
+  "parameter": "edit_scale",
+  "values": [0.03, 0.065, 0.1, 0.3, 0.5, 0.7]
+}

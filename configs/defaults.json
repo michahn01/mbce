@@ -1,0 +1,24 @@
+{
+  "training": {
+    "steps": 1000000,
+    "batch_size": 256,
+    "eval_interval": 100000,
+    "eval_episodes": 15,
+    "log_interval": 10000
+  },
+  "agent": {
+    "lr": 0.0003,
+    "actor_hidden_dims": [512, 512, 512, 512],
+    "value_hidden_dims": [512, 512, 512, 512],
+    "dynamics_hidden_dims": [512, 512, 512, 512],
+    "layer_norm": true,
+    "discount": 0.999,
+    "tau": 0.005,
+    "rollout_batch_size": 256,
+    "rollout_steps": 10,
+    "flow_steps": 10,
+    "action_chunking": 10,
+    "action_chunking_test": 1
+  },
+  "seeds": [10000, 10001, 10002, 10003, 10004, 10005]
+}

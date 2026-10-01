@@ -1,0 +1,9 @@
+.venv/
+.bootstrap/
+.python/
+__pycache__/
+*.pyc
+.ruff_cache/
+runs/
+wandb/
+.DS_Store
