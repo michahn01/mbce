@@ -1,4 +1,4 @@
-"""The four single-task OGBench environments and their recorded datasets."""
+"""Single-task OGBench environments and their recorded datasets."""
 
 import os
 from pathlib import Path
