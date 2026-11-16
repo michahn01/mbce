@@ -4,10 +4,6 @@
 
 MBCE learns bounded corrections to behavior-cloned action chunks using TD-learning, then selects among the edited chunks using a model-based critic.
 
-*Abstract:*
-
-Offline RL learns policies from recorded data without collecting new experience. Offline RL can be enhanced with world models, but the offline setting imposes an inability to correct the model with live environment interaction when the actor's output distribution strays from the action distribution the model was trained on, into regions of higher model uncertainty. Some prior methods have approached this problem by constraining usage of the world model to best-of-N planning on behavior-cloned actors, thereby minimizing the distribution mismatch. However, in this paradigm, it becomes harder to solve problems that require actions that are rare or not present in the offline dataset. We introduce Model-Based Chunk Editing (MBCE), which learns bounded corrections to proposed actions before model-based best-of-N selection, allowing fine-grained deviations without inducing severe distribution mismatch. The action editor is guided by a separate value estimator trained on recorded transitions through ordinary TD-learning. Through experiments on four simulated robotic tasks in OGBench, we observe substantial improvement over an unedited baseline on a task where the baseline's performance collapses consistently, and achieve comparable results on other tasks.
-
 *Intuition:*
 
 In offline MBRL, in general you don't want to veer too far from the offline dataset's support, because you can't make corrections with live interaction data. So, suppose you train a *behavior-cloned* actor, and just perform best-of-N planning on it (e.g., using a model-based critic). This is an idea proposed by Park et al. in Scalable Offline Model-Based RL with Action Chunks.
@@ -15,6 +11,10 @@ In offline MBRL, in general you don't want to veer too far from the offline data
 However, if an action required to solve a task lies *outside* that dataset support, the BC actor may never produce it. In practice, if that action lies outside the dataset support, but not *too* far out where the model-based planner becomes severely unreliable, it may be beneficial to lend a little slack to the BC actor and allow it to reach that action slightly beyond the dataset support.
 
 MBCE introduces an edit policy (as in EXPO by Dong et al., and QAM-E by Li et al.) right after the BC actor, right before model-based best-of-N selection. An edit policy inserts a small, bounded edit to a base action, and it's well-suited for this use case, because it hard-bounds the magnitude of the edit it produces by construction. So, it's very easy to tune/control the magnitude of edits we introduce to the behavior-cloned proposals.
+
+*Official Abstract:*
+
+Offline RL learns policies from recorded data without collecting new experience. Offline RL can be enhanced with world models, but the offline setting imposes an inability to correct the model with live environment interaction when the actor's output distribution strays from the action distribution the model was trained on, into regions of higher model uncertainty. Some prior methods have approached this problem by constraining usage of the world model to best-of-N planning on behavior-cloned actors, thereby minimizing the distribution mismatch. However, in this paradigm, it becomes harder to solve problems that require actions that are rare or not present in the offline dataset. We introduce Model-Based Chunk Editing (MBCE), which learns bounded corrections to proposed actions before model-based best-of-N selection, allowing fine-grained deviations without inducing severe distribution mismatch. The action editor is guided by a separate value estimator trained on recorded transitions through ordinary TD-learning. Through experiments on four simulated robotic tasks in OGBench, we observe substantial improvement over an unedited baseline on a task where the baseline's performance collapses consistently, and achieve comparable results on other tasks.
 
 *Contained in this repo:*
 
