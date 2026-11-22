@@ -1,16 +1,29 @@
 # MBCE
 
-**What is MBCE (Model-Based Chunk Editing for offline reinforcement learning)?**
+**What is MBCE (Model-Based Chunk Editing for offline RL)?**
 
-MBCE learns bounded corrections to behavior-cloned action chunks using TD-learning, then selects among the edited chunks using a model-based critic.
+MBCE learns bounded corrections to behavior-cloned action chunks using TD-learning, then selects
+among the edited chunks using a model-based critic.
 
 **Intuition:**
 
-In offline MBRL, in general you don't want to veer too far from the offline dataset's support, because you can't make corrections with live interaction data. So, suppose you train a *behavior-cloned* actor, and just perform best-of-N planning on it (e.g., using a model-based critic). This is an idea proposed by Park et al. in Scalable Offline Model-Based RL with Action Chunks.
+In offline MBRL, in general you don't want to veer too far from the offline dataset's support,
+because you can't make corrections with live interaction data. So, suppose you train a
+*behavior-cloned* actor, and just perform best-of-N planning on it (e.g., using a model-based
+critic). This is an idea proposed by Park et al. in [Scalable Offline Model-Based RL with Action
+Chunks](https://arxiv.org/abs/2512.08108).
 
-However, if an action required to solve a task lies *outside* that dataset support, the BC actor may never produce it. In practice, if that action lies outside the dataset support, but not *too* far out where the model-based planner becomes severely unreliable, it may be beneficial to lend a little slack to the BC actor and allow it to reach that action slightly beyond the dataset support.
+However, if an action required to solve a task lies *outside* that dataset support, the BC actor may
+never produce it. In practice, if that action lies outside the dataset support, but not *too* far
+out where the model-based planner becomes severely unreliable, it may be beneficial to lend a little
+slack to the BC actor and allow it to reach that action slightly beyond the dataset support.
 
-MBCE introduces an edit policy (as in EXPO by Dong et al., and QAM-E by Li et al.) right after the BC actor, right before model-based best-of-N selection. An edit policy inserts a small, bounded edit to a base action, and it's well-suited for this use case, because it hard-bounds the magnitude of the edit it produces by construction. So, it's very easy to tune/control the magnitude of edits we introduce to the behavior-cloned proposals.
+MBCE introduces an edit policy (as in [EXPO](https://arxiv.org/abs/2507.07986) by Dong et al., and
+[QAM-E](https://arxiv.org/abs/2601.14234) by Li et al.) right after the BC actor, right before
+model-based best-of-N selection. An edit policy inserts a small, bounded edit to a base action, and
+it's well-suited for this use case, because it hard-bounds the magnitude of the edit it produces by
+construction. So, it's very easy to tune/control the magnitude of edits we introduce to the
+behavior-cloned proposals.
 
 [[Workshop Page]](https://uncertainwm2026.github.io/) [[Paper]](paper/uncertain_wm_workshop_version.pdf)
 
