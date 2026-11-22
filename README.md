@@ -1,11 +1,13 @@
 # MBCE
 
-## What is MBCE (Model-Based Chunk Editing for offline RL)?
+### [[Workshop Page]](https://uncertainwm2026.github.io/) [[Paper]](paper/uncertain_wm_workshop_version.pdf)
+
+## What is MBCE ("Model-Based Chunk Editing" for offline RL)?
 
 MBCE learns bounded corrections to behavior-cloned action chunks using TD-learning, then selects
 among the edited chunks using a model-based critic.
 
-## Intuition:
+## Intuition
 
 In offline MBRL, in general you don't want to veer too far from the offline dataset's support,
 because you can't make corrections with live interaction data. So, suppose you train a
@@ -24,8 +26,6 @@ model-based best-of-N selection. An edit policy inserts a small, bounded edit to
 it's well-suited for this use case, because it hard-bounds the magnitude of the edit it produces by
 construction. So, it's very easy to tune/control the magnitude of edits we introduce to the
 behavior-cloned proposals.
-
-[[Workshop Page]](https://uncertainwm2026.github.io/) [[Paper]](paper/uncertain_wm_workshop_version.pdf)
 
 ## Contained in this repo
 
