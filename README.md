@@ -12,7 +12,7 @@ However, if an action required to solve a task lies *outside* that dataset suppo
 
 MBCE introduces an edit policy (as in EXPO by Dong et al., and QAM-E by Li et al.) right after the BC actor, right before model-based best-of-N selection. An edit policy inserts a small, bounded edit to a base action, and it's well-suited for this use case, because it hard-bounds the magnitude of the edit it produces by construction. So, it's very easy to tune/control the magnitude of edits we introduce to the behavior-cloned proposals.
 
-[Workshop Page](https://uncertainwm2026.github.io/) [Paper](paper/uncertain_wm_workshop_version.pdf)
+[[Workshop Page]](https://uncertainwm2026.github.io/) [[Paper]](paper/uncertain_wm_workshop_version.pdf)
 
 *Official Abstract:*
 
