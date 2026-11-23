@@ -25,6 +25,10 @@ it's well-suited for this use case, because it hard-bounds the magnitude of the 
 construction. So, it's very easy to tune/control the magnitude of edits we introduce to the
 behavior-cloned proposals.
 
+## Evaluation
+
+We evaluate the method on four simulated robotic tasks in OGBench. Compared to the baseline (BC actor + best-of-N planning with a model-based critic, without editing base actions), MBCE sees substantial improvement on a task where the baseline’s performance collapses consistently, while achieving comparable results on other tasks.
+
 ### [[Workshop Page]](https://uncertainwm2026.github.io/) [[Paper]](paper/uncertain_wm_workshop_version.pdf)
 
 ## Contained in this repo
